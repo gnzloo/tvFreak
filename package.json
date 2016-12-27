@@ -1,0 +1,22 @@
+{
+  "name": "smartbox",
+  "version": "1.0.0",
+  "description": "Prueba smartboxtv",
+  "main": "index.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnzloo/tvFreak.git"
+  },
+  "author": "Gonzalo Alberto Castro Herrera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gnzloo/tvFreak/issues"
+  },
+  "homepage": "https://github.com/gnzloo/tvFreak#readme",
+  "dependencies": {
+    "webpack": "^1.14.0"
+  }
+}
