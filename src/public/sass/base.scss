@@ -1,0 +1,313 @@
+@function getColumnWidth($width,$columns,$gutter){
+    @return ($width / $columns) - (($columns - 1)*$gutter);
+}
+
+//VARIABLES
+//COLOR NUCHEE AZUL LOGO
+$color: #4A90E2;
+//COLOR NUCHEE AZUL AL 90%, SEGUN PS
+$color2: #4c93e5;
+
+//GRILLA CENTRADA o WORKSPACE o CONTENEDOR PRINCIPAL
+.grid {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+
+}
+
+//CREAR CONTAINER $numero es el numero de la sección.
+@mixin crearSecciones($numero,$altura)
+{
+    @if $numero == 1{
+        .container-#{$numero} {
+            display:flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            width: 100%;
+            height: $altura;
+            padding: 0;
+            margin: 0;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            align-items: center;
+            justify-content: center;
+            background: lighten($color,35);
+        }
+    }
+    @if $numero == 2 {
+        .container-#{$numero} {
+            display:flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            width: 100%;
+            height: $altura;
+            padding: 0;
+            margin: 0;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            align-items: center;
+            justify-content: center;
+            background: $color;
+        }
+    }  
+       @if $numero == 3 {
+        .container-#{$numero} {
+            display:flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            width: 100%;
+            height: $altura;
+            padding: 0;
+            margin: 0;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    } 
+    @if $numero == 4 {
+        .container-#{$numero} {
+            display:flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            width: 100%;
+            height: $altura;
+            padding: 0;
+            margin: 0;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            align-items: center;
+            justify-content: center;
+            background: $color;
+        }
+    }    
+    
+}
+
+
+//CREAR ITEM DE X COLUMNAS
+@mixin generarItems($sizeColumn,$anchoGrilla: 950px,$gutter:10px)
+{
+    @if $sizeColumn==1 {
+        .col-#{$sizeColumn}-12 {
+            width: 50%;
+            margin-right: ($gutter)/2;
+            margin-left: ($gutter)/2;
+            display: flex;
+            align-items: center;
+            justify-content: center;  
+            flex-direction: column;
+            height: 100%;     
+        }
+     }
+     @if $sizeColumn==4 {
+         .col-#{$sizeColumn}-12 {
+            width: getColumnWidth($anchoGrilla, $sizeColumn, $gutter);
+            margin-right: ($gutter)/2;
+            margin-left: ($gutter)/2;
+            display: flex;
+            align-items: center;
+            justify-content: center;  
+            flex-direction: column;
+            height: 50%;     
+        }
+     }
+     @if $sizeColumn==13 {
+         .col-#{$sizeColumn}-12 {
+            width: getColumnWidth($anchoGrilla, 1, $gutter);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;   
+        }
+     }
+    
+
+}
+
+@mixin tipoItem($tipo)
+{
+    @if $tipo=='img-rounded'
+    {
+        .#{$tipo} {
+            max-height:100%; 
+            max-width:100%;
+            border-radius: 150px;
+            -webkit-border-radius: 150px;
+            -moz-border-radius: 150px;
+            width: 100%;
+            flex-direction: row;
+        }
+    }
+    @if $tipo=='logo'
+    {
+        .#{$tipo} {
+          
+
+        }
+    }
+    @if $tipo=='nombre-logo'
+    {
+        .#{$tipo} {
+           margin-top:10px;
+        }
+    }
+    @if $tipo=='texto-logo'
+    {
+        .#{$tipo} {
+            color:gray;
+            font-size: small;
+            margin-top: 20px;
+        }
+    }
+    @if $tipo=='img-1'
+    {
+        .#{$tipo} {
+            width: 100%;
+            height: 50%;
+            border-radius: 10px;
+        }
+    }
+    @if $tipo == 'texto-img-1'
+    {
+        .#{$tipo} {
+            font-size: small;
+            background: white;
+            margin-top: -12px;
+            color:gray;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+        }
+    }
+    @if $tipo=='img-2'
+    {
+        .#{$tipo} {
+            width: 50%;
+            height: 50%;
+            border-radius: 150px;
+            -webkit-border-radius: 150px;
+            -moz-border-radius: 150px;
+        }
+    }
+    @if $tipo=='img-3'
+    {
+        .#{$tipo} {
+            width: 100%;
+            height: 50%;
+            border-radius: 10px;
+        }
+    }
+    @if $tipo == 'texto-img-3'
+    {
+        .#{$tipo} {
+            font-size: small;
+            background: white;
+            margin-top: -12px;
+            color:gray;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+        }
+    }
+    @if $tipo=='paralax'
+    {
+        .#{$tipo} {
+               height: 100%;
+               width: 100%;
+        }
+    }
+    @if $tipo=='footer'
+    {
+        .#{$tipo} {
+            
+        }
+    }
+    @if $tipo=='logo-modal'
+    {
+        .#{$tipo} {
+            
+        }
+    }
+    @if $tipo=='nombre-modal'
+    {
+        .#{$tipo} {
+            
+        }
+    }
+    @if $tipo=='fb-modal'
+    {
+        .#{$tipo} {
+            
+        }
+    }
+    @if $tipo=='twitter-modal'
+    {
+        .#{$tipo} {
+            
+        }
+    }
+    @if $tipo=='invitado-modal'
+    {
+        .#{$tipo} {
+            
+        }
+    }
+    @if $tipo=='footer-modal'
+    {
+        .#{$tipo} {
+            
+        }
+    }
+}
+
+//CREAR SECCIÓN 1
+@include crearSecciones(1,400px);
+//CANTIDAD DE ITEMS
+@include generarItems(1);
+//CREAR LOGO
+@include tipoItem('logo');
+//CREAR NOMBRE LOGO
+@include tipoItem('nombre-logo');
+//CREAR NOMBRE LOGO
+@include tipoItem('texto-logo');
+//CREAR SECCIÓN 2
+@include crearSecciones(2,300px);
+//CANTIDAD ITEMS
+@include generarItems(4);
+//IMAGEN 1
+@include tipoItem('img-1');
+//TEXTO IMAGEN 1
+@include tipoItem('texto-img-1');
+//IMAGEN 2
+@include tipoItem('img-2');
+//IMAGEN 3
+@include tipoItem('img-3');
+//TEXTO IMAGEN 3
+@include tipoItem('texto-img-3')
+//SECCIÓN 3
+@include crearSecciones(3,250px);
+//CANTIDAD DE ITEMS
+@include generarItems(13);
+//IMAGEN PARALAX
+@include tipoItem('paralax');
+//SECCIÓN 3
+@include crearSecciones(4,100px);
+//NOMBRE LOGO FOOTER
+@include tipoItem('footer');
+//CREAR IMAGEN REDONDA EN ITEM
+@include tipoItem('img-rounded');
+
+body, footer {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
