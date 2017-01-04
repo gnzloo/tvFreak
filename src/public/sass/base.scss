@@ -167,6 +167,7 @@ $color2: #4c93e5;
             color:gray;
             font-size: small;
             margin-top: 20px;
+            text-align: justify;
         }
     }
     @if $tipo=='img-1'
@@ -193,9 +194,9 @@ $color2: #4c93e5;
         .#{$tipo} {
             width: 50%;
             height: 50%;
-            border-radius: 150px;
-            -webkit-border-radius: 150px;
-            -moz-border-radius: 150px;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
         }
     }
     @if $tipo=='img-3'
@@ -227,7 +228,7 @@ $color2: #4c93e5;
     @if $tipo=='footer'
     {
         .#{$tipo} {
-            
+            height: 30%;
         }
     }
     @if $tipo=='logo-modal'
@@ -298,14 +299,14 @@ $color2: #4c93e5;
 @include generarItems(13);
 //IMAGEN PARALAX
 @include tipoItem('paralax');
-//SECCIÓN 3
-@include crearSecciones(4,100px);
+//SECCIÓN 4
+@include crearSecciones(4,50px);
 //NOMBRE LOGO FOOTER
 @include tipoItem('footer');
 //CREAR IMAGEN REDONDA EN ITEM
 @include tipoItem('img-rounded');
 
-body, footer {
+body {
     font-family: 'Roboto', sans-serif;
 }
 
